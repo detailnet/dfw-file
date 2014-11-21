@@ -112,11 +112,17 @@ class RepositoryCollection implements
         $this->repositories = array();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getIterator()
     {
         return new ArrayIterator($this->repositories);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function offsetExists($nameOrRepository)
     {
         try {
@@ -128,6 +134,9 @@ class RepositoryCollection implements
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function offsetGet($nameOrRepository)
     {
         if ($nameOrRepository instanceof RepositoryInterface) {
@@ -139,6 +148,9 @@ class RepositoryCollection implements
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function offsetSet($name, $repository)
     {
         $this->assertNameIsString($name);
@@ -152,6 +164,9 @@ class RepositoryCollection implements
         $this->repositories[$name] = $repository;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function offsetUnset($nameOrRepository)
     {
         // Note that we're not failing if the repository does not exist.
@@ -170,11 +185,18 @@ class RepositoryCollection implements
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function count()
     {
         return count($this->repositories);
     }
 
+    /**
+     * @param $name
+     * @return RepositoryInterface
+     */
     protected function getByName($name)
     {
         $this->assertNameIsString($name);
@@ -188,12 +210,20 @@ class RepositoryCollection implements
         );
     }
 
+    /**
+     * @param RepositoryInterface $repository
+     * @return RepositoryInterface
+     */
     protected function getByRepository(RepositoryInterface $repository)
     {
         $this->getNameByRepository($repository); // Just to check if it exists
         return $repository;
     }
 
+    /**
+     * @param RepositoryInterface $repository
+     * @return string
+     */
     protected function getNameByRepository(RepositoryInterface $repository)
     {
         foreach ($this->repositories as $name => $existingRepository) {

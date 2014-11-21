@@ -99,6 +99,8 @@ class GaufretteStorage implements
 //                @finfo_close($mime);
 //            }
 //        }
+
+        return null;
     }
 
     /**
