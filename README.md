@@ -1,4 +1,1 @@
-dfw-file
-========
-
-DETAIL Framework library for filesystem abstraction
+# DETAIL Framework library for filesystem abstraction
