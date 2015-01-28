@@ -15,7 +15,12 @@ interface MessageFactoryInterface
      * @return MessageInterface
      */
     public function createNew(
-        $repository, $id, $url, array $meta = array(), $createDerivatives = true,
-        array $callbackData = array(), $messageClass = null
+        $repository,
+        $id,
+        $url,
+        array $meta = array(),
+        $createDerivatives = true,
+        array $callbackData = array(),
+        $messageClass = null
     );
 }

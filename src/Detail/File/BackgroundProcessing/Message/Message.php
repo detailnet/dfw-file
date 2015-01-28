@@ -132,7 +132,11 @@ class Message implements
 //    }
 
     public function __construct(
-        $repository, $id, $url, array $meta = array(), $createDerivatives = true,
+        $repository,
+        $id,
+        $url,
+        array $meta = array(),
+        $createDerivatives = true,
         array $callbackData = array()
     ) {
         /** @todo Assert arguments */

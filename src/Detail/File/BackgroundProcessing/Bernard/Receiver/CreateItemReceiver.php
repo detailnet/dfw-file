@@ -59,12 +59,16 @@ class CreateItemReceiver extends AbstractReceiver
             $itemMessage->getId();
 
             $item = $repository->createItem(
-                $itemMessage->getId(), $itemMessage->getPublicUrl(),
-                $itemMessage->getMeta(), $itemMessage->getCreateDerivatives()
+                $itemMessage->getId(),
+                $itemMessage->getPublicUrl(),
+                $itemMessage->getMeta(),
+                $itemMessage->getCreateDerivatives()
             );
 
             $repository->reportItemCreatedInBackground(
-                $item, $itemMessage->getCreateDerivatives(), $itemMessage->getCallbackData()
+                $item,
+                $itemMessage->getCreateDerivatives(),
+                $itemMessage->getCallbackData()
             );
         } catch (\Exception $e) {
             /** @todo Handle known exception for better readability... */

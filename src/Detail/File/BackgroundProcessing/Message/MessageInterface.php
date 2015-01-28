@@ -13,7 +13,11 @@ interface MessageInterface
      * @param array $callbackData
      */
     public function __construct(
-        $repository, $id, $url, array $meta = array(), $createDerivatives = true,
+        $repository,
+        $id,
+        $url,
+        array $meta = array(),
+        $createDerivatives = true,
         array $callbackData = array()
     );
 
@@ -46,4 +50,4 @@ interface MessageInterface
      * @return array
      */
     public function getCallbackData();
-} 
+}

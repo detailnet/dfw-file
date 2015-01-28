@@ -97,6 +97,9 @@ interface StorageInterface
      * @return ItemInterface
      */
     public function createItemFromContents(
-        RepositoryInterface $repository, $id, $contents, array $meta = array()
+        RepositoryInterface $repository,
+        $id,
+        $contents,
+        array $meta = array()
     );
 }

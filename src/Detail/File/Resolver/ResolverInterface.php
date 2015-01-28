@@ -11,4 +11,4 @@ interface ResolverInterface
      * @return string
      */
     public function resolve($id);
-} 
+}

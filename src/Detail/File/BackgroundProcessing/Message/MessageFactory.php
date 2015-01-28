@@ -57,8 +57,13 @@ class MessageFactory implements
      * {@inheritdoc}
      */
     public function createNew(
-        $repository, $id, $url, array $meta = array(), $createDerivatives = true,
-        array $callbackData = array(), $messageClass = null
+        $repository,
+        $id,
+        $url,
+        array $meta = array(),
+        $createDerivatives = true,
+        array $callbackData = array(),
+        $messageClass = null
     ) {
         /** @todo Assert arguments */
         /** @todo Check if class exists */

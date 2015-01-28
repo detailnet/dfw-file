@@ -27,7 +27,11 @@ interface RepositoryInterface extends StandardRepositoryInterface
      * @return void
      */
     public function createItemInBackground(
-        $id, $url, array $meta = array(), $createDerivatives = true, array $callbackData = array()
+        $id,
+        $url,
+        array $meta = array(),
+        $createDerivatives = true,
+        array $callbackData = array()
     );
 
     /**

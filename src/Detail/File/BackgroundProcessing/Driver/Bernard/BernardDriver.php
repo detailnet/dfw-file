@@ -7,8 +7,8 @@ use Detail\File\BackgroundProcessing\Driver\DriverInterface;
 use Detail\File\BackgroundProcessing\Message\MessageInterface;
 use Detail\File\Exception\RuntimeException;
 
-class BernardDriver
-    implements DriverInterface
+class BernardDriver implements
+    DriverInterface
 {
     /**
      * @var Messenger
@@ -94,7 +94,8 @@ class BernardDriver
                 throw new RuntimeException(
                     sprintf(
                         'Invalid options for queue "%s" encountered; expected "array", received "%s"',
-                        $queueName, (is_object($options) ? get_class($options) : gettype($options))
+                        $queueName,
+                        (is_object($options) ? get_class($options) : gettype($options))
                     )
                 );
             }
@@ -112,7 +113,10 @@ class BernardDriver
     }
 
     public function __construct(
-        Messenger $messenger, $createQueueName = null, $completeQueueName = null, array $queueOptions = null
+        Messenger $messenger,
+        $createQueueName = null,
+        $completeQueueName = null,
+        array $queueOptions = null
     ) {
         $this->setMessenger($messenger);
 

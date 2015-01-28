@@ -145,11 +145,20 @@ class Repository implements
      * {@inheritdoc}
      */
     public function createItemInBackground(
-        $id, $url, array $meta = array(), $createDerivatives = true, array $callbackData = array()
+        $id,
+        $url,
+        array $meta = array(),
+        $createDerivatives = true,
+        array $callbackData = array()
     ) {
         $driver = $this->getBackgroundDriver();
         $message = $driver->getMessageFactory()->createNew(
-            $this->getName(), $id, $url, $meta, $createDerivatives, $callbackData
+            $this->getName(),
+            $id,
+            $url,
+            $meta,
+            $createDerivatives,
+            $callbackData
         );
 
         $driver->createItem($message);
@@ -162,7 +171,12 @@ class Repository implements
     {
         $driver = $this->getBackgroundDriver();
         $message = $driver->getMessageFactory()->createNew(
-            $this->getName(), $item->getId(), $item->getPublicUrl(), $item->getMeta(), $createDerivatives, $callbackData
+            $this->getName(),
+            $item->getId(),
+            $item->getPublicUrl(),
+            $item->getMeta(),
+            $createDerivatives,
+            $callbackData
         );
 
         $driver->completeItem($message);

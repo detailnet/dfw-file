@@ -100,7 +100,10 @@ interface RepositoryInterface
      * @return ItemInterface Created item
      */
     public function createItem(
-        $id, $file, array $meta = array(), $createDerivatives = true
+        $id,
+        $file,
+        array $meta = array(),
+        $createDerivatives = true
     );
 
     /**
@@ -115,7 +118,10 @@ interface RepositoryInterface
      * @return ItemInterface Created item
      */
     public function createItemFromContents(
-        $id, $contents, array $meta = array(), $createDerivatives = true
+        $id,
+        $contents,
+        array $meta = array(),
+        $createDerivatives = true
     );
 
     /**

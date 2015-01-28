@@ -152,8 +152,11 @@ class GaufretteStorage implements
         } catch (\Exception $e) {
             throw new StorageException(
                 sprintf(
-                    "Item '%s' could not be created. An error occurred while writing the file.", $id
-                ), 0, $e
+                    "Item '%s' could not be created. An error occurred while writing the file.",
+                    $id
+                ),
+                0,
+                $e
             );
         }
 

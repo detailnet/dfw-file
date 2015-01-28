@@ -8,4 +8,4 @@ interface StorageAwareInterface
      * @param StorageInterface $storage
      */
     public function setStorage(StorageInterface $storage);
-} 
+}

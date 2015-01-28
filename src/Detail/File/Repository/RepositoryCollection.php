@@ -141,11 +141,13 @@ class RepositoryCollection implements
     {
         if ($nameOrRepository instanceof RepositoryInterface) {
             return $this->getByRepository($nameOrRepository);
-        } else if (is_string($nameOrRepository)) {
+        } elseif (is_string($nameOrRepository)) {
             return $this->getByName($nameOrRepository);
         } else {
             $this->throwInvalidRepositoryArgumentException($nameOrRepository);
         }
+
+        return null;
     }
 
     /**
@@ -178,7 +180,7 @@ class RepositoryCollection implements
                     return $nameOrRepository !== $repository;
                 }
             );
-        } else if (is_string($nameOrRepository)) {
+        } elseif (is_string($nameOrRepository)) {
             unset($this->repositories[$nameOrRepository]);
         } else {
             $this->throwInvalidRepositoryArgumentException($nameOrRepository);
